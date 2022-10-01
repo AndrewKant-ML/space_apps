@@ -1,11 +1,17 @@
 #main {
     position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
+    margin: 0;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
     justify-content: center;
+    background-image: url("/assets/bg.png");
+    background-color: midnightblue;
+    background-repeat: cover;
 }
 
 #nav_main {
@@ -14,12 +20,12 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: white;
 }
 
 .list_class {
     width: 100%;
     height: 100%;
+    margin: 0;
     padding: 0;
     list-style-type: none;
     display: flex;
@@ -32,8 +38,9 @@
     flex-flow: row nowrap;
 }
 
-.nav_item {
+.list_item {
     align-self: center;
+    color: white;
 }
 
 .nav_item_icon {

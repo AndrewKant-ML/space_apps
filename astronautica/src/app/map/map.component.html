@@ -1,3 +1,13 @@
-<div id="map_container">
+<div id="map_container"
+    (dragenter)="showDragTip($event)"
+    (dragleave)="hideDragTip($event)"
+    (dragover)="allowDrag($event)"
+    (drop)="onItemDrop($event)">
+
+    <div id="drag_tip">
+        <p id="drag_tip_text">
+            Drag here your {{text}}
+        </p>
+    </div>
 
 </div>

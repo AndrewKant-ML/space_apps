@@ -1,13 +1,22 @@
 <div id="main">
     <nav id="nav_main">
         <ul id="nav_list_top" class="list_class">
-            <li class="nav_item">
+            <li draggable=true
+                id="bacteria"
+                class="list_item"
+                (dragstart)="addItem($event)">
                 batterio
             </li>
-            <li class="nav_item">
+            <li draggable=true
+                id="human"
+                class="list_item"
+                (dragstart)="addItem($event)">
                 umano
             </li>
-            <li class="nav_item">
+            <li draggable=true
+                id="animal"
+                class="list_item"
+                (dragstart)="addItem($event)">
                 animale
             </li>
         </ul>
@@ -16,29 +25,47 @@
     <div id="center_container">
         <div class="side_menu">
             <ul class="list_class nav_list_side">
-                <li>
+                <li draggable=true
+                    id="nav_1"
+                    class="list_item"
+                    (dragstart)="addItem($event)">
                     Navicella 1
                 </li>
-                <li>
+                <li draggable=true
+                    id="nav_2"
+                    class="list_item"
+                    (dragstart)="addItem($event)">
                     Navicella 2
                 </li>
-                <li>
+                <li draggable=true
+                    id="nav_3"
+                    class="list_item"
+                    (dragstart)="addItem($event)">
                     Navicella 3
                 </li>
             </ul>
         </div>
         <div id="map">
-            <app-map></app-map>
+            <app-map [text]="this.text"></app-map>
         </div>
         <div class="side_menu">
             <ul id="right_list" class="list_class nav_list_side">
-                <li class="nav_item">
+                <li draggable=true
+                    id="planet 1"
+                    class="list_item"
+                    (dragstart)="addItem($event)">
                     Pianeta 1
                 </li>
-                <li class="nav_item">
+                <li draggable=true
+                    id="planet 2"
+                    class="list_item"
+                    (dragstart)="addItem($event)">
                     Pianeta 2
                 </li>
-                <li class="nav_item">
+                <li draggable=true
+                    id="planet 3"
+                    class="list_item"
+                    (dragstart)="addItem($event)">
                     Pianeta 3
                 </li>
             </ul>

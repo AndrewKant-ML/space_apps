@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
+  text: string = '';
+
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  addItem(event: any) {
+    this.text = event.target!.id;
+    event.dataTransfer!.setData("text/plain", event.target!.id);
   }
 
 }
