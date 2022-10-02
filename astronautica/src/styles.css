@@ -7,6 +7,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .slot {
     width: 100%;
     height: 100%;
+    display: inline-flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .drag_tip {
@@ -30,4 +34,15 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .drag_tip_text {
     font-size: 1rem;
     text-transform: uppercase;
+}
+
+.icon_container {
+    position: relative;
+    width: 50%;
+    height: auto;
+}
+
+.icon {
+    width: 100%;
+    height: auto;
 }
