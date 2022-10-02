@@ -1,4 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { moveItemInArray, copyArrayItem } from '@angular/cdk/drag-drop';
+import { relative } from 'path';
 
 @Component({
   selector: 'app-map',
@@ -12,6 +14,19 @@ export class MapComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  private changeStyles(el: HTMLDivElement) {
+    el.style.position = "relative";
+    switch(el.classList.item(0)) {
+      case "entity":
+
+        break;
+      case "vehicle":
+        break;
+      case "destination":
+        break;
+    }
   }
 
   showDragTip(event: DragEvent) {
@@ -31,9 +46,15 @@ export class MapComponent implements OnInit {
 
   onItemDrop(event: any) {
     event.preventDefault();
-    var data = event.dataTransfer!.getData("text/plain");
-    event.target!.appendChild(document.getElementById(data));
+    let data = event.dataTransfer!.getData("text/plain");
+    let el = document.getElementById(data) as HTMLDivElement;
+    event.target!.appendChild(el);
+    this.changeStyles(el);
     this.hideDragTip(event);
+  }
+
+  showInfo() {
+    
   }
 
 }

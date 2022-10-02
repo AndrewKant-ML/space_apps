@@ -1,47 +1,30 @@
 <div id="main">
     <nav id="nav_main">
-        <ul id="nav_list_top" class="list_class">
-            <li draggable=true
-                id="bacteria"
-                class="list_item"
-                (dragstart)="addItem($event)">
-                batterio
-            </li>
-            <li draggable=true
-                id="human"
-                class="list_item"
-                (dragstart)="addItem($event)">
-                umano
-            </li>
-            <li draggable=true
-                id="animal"
-                class="list_item"
-                (dragstart)="addItem($event)">
-                animale
-            </li>
-        </ul>
+        <ul id="nav_list_top"
+            class="list_class"
+            cdkDropList
+            [cdkDropListData]="entities"
+            cdkDropListSortingDisabled="true"
+            >
+            <li *ngFor="let entity of entities"
+                    draggable="true"
+                    id="{{entity}}"
+                    class="entity list_item"
+                    (dragstart)="addItem($event)">
+                    {{entity}}
+                </li>
+            </ul>
     </nav>
 
     <div id="center_container">
         <div class="side_menu">
             <ul class="list_class nav_list_side">
-                <li draggable=true
-                    id="nav_1"
-                    class="list_item"
+                <li *ngFor="let vehicle of vehicles"
+                    draggable="true"
+                    id="{{vehicle}}"
+                    class="vehicle list_item"
                     (dragstart)="addItem($event)">
-                    Navicella 1
-                </li>
-                <li draggable=true
-                    id="nav_2"
-                    class="list_item"
-                    (dragstart)="addItem($event)">
-                    Navicella 2
-                </li>
-                <li draggable=true
-                    id="nav_3"
-                    class="list_item"
-                    (dragstart)="addItem($event)">
-                    Navicella 3
+                    {{vehicle}}
                 </li>
             </ul>
         </div>
@@ -50,23 +33,12 @@
         </div>
         <div class="side_menu">
             <ul id="right_list" class="list_class nav_list_side">
-                <li draggable=true
-                    id="planet 1"
-                    class="list_item"
+                <li *ngFor="let destination of destinations"
+                    draggable="true"
+                    id="{{destination}}"
+                    class="destination list_item"
                     (dragstart)="addItem($event)">
-                    Pianeta 1
-                </li>
-                <li draggable=true
-                    id="planet 2"
-                    class="list_item"
-                    (dragstart)="addItem($event)">
-                    Pianeta 2
-                </li>
-                <li draggable=true
-                    id="planet 3"
-                    class="list_item"
-                    (dragstart)="addItem($event)">
-                    Pianeta 3
+                    {{destination}}
                 </li>
             </ul>
         </div>
