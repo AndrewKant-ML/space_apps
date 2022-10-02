@@ -5,9 +5,10 @@
             cdkDropList
             [cdkDropListData]="entities"
             cdkDropListSortingDisabled="true"
+            cdkDropListConnectedTo="entity_slot"
             >
             <li *ngFor="let entity of entities"
-                    draggable="true"
+                    cdkDrag
                     id="{{entity}}"
                     class="entity list_item"
                     (dragstart)="addItem($event)">
@@ -18,23 +19,31 @@
 
     <div id="center_container">
         <div class="side_menu">
-            <ul class="list_class nav_list_side">
+            <ul id="left_list" class="list_class nav_list_side"
+            cdkDropList
+            [cdkDropListData]="vehicles"
+            cdkDropListSortingDisabled="true"
+            cdkDropListConnectedTo="vehicle_slot">
                 <li *ngFor="let vehicle of vehicles"
-                    draggable="true"
+                    cdkDrag
                     id="{{vehicle}}"
                     class="vehicle list_item"
                     (dragstart)="addItem($event)">
-                    {{vehicle}}
+                        <img class="icon" src="/assets/{{vehicle}}">
                 </li>
             </ul>
         </div>
         <div id="map">
-            <app-map [text]="this.text"></app-map>
+            <app-map></app-map>
         </div>
         <div class="side_menu">
-            <ul id="right_list" class="list_class nav_list_side">
+            <ul id="right_list" class="list_class nav_list_side"
+            cdkDropList
+            [cdkDropListData]="destinations"
+            cdkDropListSortingDisabled="true"
+            cdkDropListConnectedTo="destination_slot">
                 <li *ngFor="let destination of destinations"
-                    draggable="true"
+                    cdkDrag
                     id="{{destination}}"
                     class="destination list_item"
                     (dragstart)="addItem($event)">

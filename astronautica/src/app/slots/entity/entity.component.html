@@ -1,0 +1,16 @@
+<div id="entity_slot" class="slot"
+    (dragenter)="showDragTip($event, 'entity')"
+    (dragleave)="hideDragTip('entity')"
+    (dragover)="allowDrag($event, 'entity')"
+    (cdkDropListDropped)="onItemDrop($event, 'entity')"
+    cdkDropList
+    #entitydestlist="cdkDropList"
+    [cdkDropListData]="entity"
+    cdkDropListConnectedTo="nav_list_top">
+
+    <div id="drag_tip_entity" class="drag_tip">
+        <p class="drag_tip_text">
+            Drag here your entity
+        </p>
+    </div>
+</div>

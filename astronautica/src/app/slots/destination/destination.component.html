@@ -1,0 +1,15 @@
+<div id="destination_slot" class="slot"
+    (dragenter)="showDragTip($event, 'destination')"
+    (dragleave)="hideDragTip('destination')"
+    (dragover)="allowDrag($event, 'destination')"
+    (cdkDropListDropped)="onItemDrop($event, 'destination')"
+    cdkDropList
+    #destinationdestlist="cdkDropList"
+    [cdkDropListData]="destination"
+    cdkDropListConnectedTo="right_list">
+    <div id="drag_tip_destination" class="drag_tip">
+        <p class="drag_tip_text">
+            Drag here your destination
+        </p>
+    </div>
+</div>

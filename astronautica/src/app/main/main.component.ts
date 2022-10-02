@@ -10,7 +10,7 @@ export class MainComponent implements OnInit {
   text: string = '';
 
   entities = ["bacteria", "human", "animal"];
-  vehicles = ["nav 1", "nav 2", "nav 3"];
+  vehicles = ["vehicle_1.png"];
   destinations = ["planet 1", "planet 2", "planet 3"];
 
   constructor() { }

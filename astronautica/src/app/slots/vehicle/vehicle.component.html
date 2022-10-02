@@ -1,0 +1,22 @@
+<div id="vehicle_slot" class="slot"
+    
+    (dragleave)="hideDragTip('vehicle')"
+    (dragover)="allowDrag($event, 'vehicle')"
+    (cdkDropListDropped)="onItemDrop($event, 'vehicle')"
+    cdkDropList
+    [cdkDropListData]="vehicle"
+    cdkDropListConnectedTo="left_list"
+    >
+    <div *ngFor="let v of vehicle"
+        draggable="true"
+        id="{{v}}"
+        cdkDrag>
+        <img class="icon" src="/assets/{{v}}">
+    </div>
+    
+    <div id="drag_tip_vehicle" class="drag_tip">
+        <p class="drag_tip_text">
+            Drag here your vehicle
+        </p>
+    </div>
+</div>

@@ -9,14 +9,11 @@
 
 #slots {
     flex-grow: 9;
+    width: 100%;
     display: inline-flex;
     flex-flow: row nowrap;
-    justify-content: stretch;
+    justify-content: center;
     align-items: center;
-}
-
-.slot {
-    flex-grow: 1;
 }
 
 #bottom {
@@ -39,17 +36,3 @@
     border: 0;
 }
 
-#drag_tip {
-    visibility: hidden;
-    flex-grow: 1;
-    margin: 5%;
-    padding: auto;
-    background-color: rgba(202, 186, 243, .95);
-    pointer-events: none;
-}
-
-#drag_tip_text {
-    font-size: 2rem;
-    text-transform: uppercase;
-    text-align: center;
-}
