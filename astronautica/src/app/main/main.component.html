@@ -5,14 +5,13 @@
             cdkDropList
             [cdkDropListData]="entities"
             cdkDropListSortingDisabled="true"
-            cdkDropListConnectedTo="entity_slot"
-            >
+            cdkDropListConnectedTo="entity_slot">
             <li *ngFor="let entity of entities"
                     cdkDrag
                     id="{{entity}}"
                     class="entity list_item"
-                    (dragstart)="addItem($event)">
-                    {{entity}}
+                    (cdkDragStarted)="addItem($event)">
+                    <img class="icon" src="/assets/{{entity}}">
                 </li>
             </ul>
     </nav>
@@ -28,7 +27,7 @@
                     cdkDrag
                     id="{{vehicle}}"
                     class="vehicle list_item"
-                    (dragstart)="addItem($event)">
+                    (cdkDragStarted)="addItem($event)">
                         <img class="icon" src="/assets/{{vehicle}}">
                 </li>
             </ul>
@@ -46,8 +45,8 @@
                     cdkDrag
                     id="{{destination}}"
                     class="destination list_item"
-                    (dragstart)="addItem($event)">
-                    {{destination}}
+                    (cdkDragStarted)="addItem($event)">
+                    <img class="icon" src="/assets/{{destination}}">
                 </li>
             </ul>
         </div>

@@ -15,17 +15,8 @@ export class MapComponent implements OnInit {
   ngOnInit() {
   }
 
-  private changeStyles(el: HTMLDivElement) {
-    el.style.position = "relative";
-    switch(el.classList.item(0)) {
-      case "entity":
+  check(value: string) {
 
-        break;
-      case "vehicle":
-        break;
-      case "destination":
-        break;
-    }
   }
 
   showDragTip(event: DragEvent, type: string) {

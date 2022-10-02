@@ -9,9 +9,9 @@ export class MainComponent implements OnInit {
 
   text: string = '';
 
-  entities = ["bacteria", "human", "animal"];
-  vehicles = ["vehicle_1.png"];
-  destinations = ["planet 1", "planet 2", "planet 3"];
+  entities = ["bacteria.png", "astro_ant.png", "fly.png", "ant.png", "fish.png"];
+  vehicles = ["vehicle_1.png", "ufo.png"];
+  destinations = ["iss.png", "moon.png", "mars.png"];
 
   constructor() { }
 
@@ -19,8 +19,10 @@ export class MainComponent implements OnInit {
   }
 
   addItem(event: any) {
-    this.text = event.target!.id;
-    event.dataTransfer!.setData("text/plain", event.target!.id);
+    /* this.text = event.target!.id;
+    event.dataTransfer!.setData("text/plain", event.target!.id); */
   }
+
+  
 
 }

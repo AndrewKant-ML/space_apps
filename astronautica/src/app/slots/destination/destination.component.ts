@@ -1,5 +1,5 @@
 import { CdkDragDrop, copyArrayItem, moveItemInArray } from '@angular/cdk/drag-drop';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-destination',
@@ -9,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class DestinationComponent implements OnInit {
 
   destination: string[] = [];
+
+  @Output() selectedDestination: string = "";
 
   constructor() { }
 
@@ -20,8 +22,7 @@ export class DestinationComponent implements OnInit {
 }
 
 hideDragTip(type: string) {
-  console.log("drag_tip_"+type);
-    (document.getElementById("drag_tip_"+type)! as HTMLDivElement).style.visibility = "hidden";
+   (document.getElementById("drag_tip_"+type)! as HTMLDivElement).style.visibility = "hidden";
 }
 
 allowDrag(event: Event, type: string) {
@@ -29,7 +30,7 @@ allowDrag(event: Event, type: string) {
 }
 
 onItemDrop(event: CdkDragDrop<string[]>, type: string) {
-  this.hideDragTip(type);
+  //this.hideDragTip(type);
   
   if (event.previousContainer === event.container) {
     moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
@@ -40,6 +41,8 @@ onItemDrop(event: CdkDragDrop<string[]>, type: string) {
       event.previousIndex,
       event.currentIndex,
     );
+    this.selectedDestination = event.previousContainer.data[event.previousIndex].split(".")[0];
+    
   }
   /* event.preventDefault();
   let data = event.dataTransfer!.getData("text/plain");

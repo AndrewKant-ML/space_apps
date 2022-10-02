@@ -5,8 +5,8 @@
     (cdkDropListDropped)="onItemDrop($event, 'vehicle')"
     cdkDropList
     [cdkDropListData]="vehicle"
-    cdkDropListConnectedTo="left_list"
-    >
+    cdkDropListSortingDisabled="true"
+    cdkDropListConnectedTo="left_list">
     <div *ngFor="let v of vehicle"
         draggable="true"
         id="{{v}}"

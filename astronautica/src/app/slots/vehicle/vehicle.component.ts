@@ -1,5 +1,6 @@
 import { CdkDragDrop, moveItemInArray, copyArrayItem } from '@angular/cdk/drag-drop';
-import { Component, OnInit } from '@angular/core';
+import { outputAst } from '@angular/compiler';
+import { Component, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-vehicle',
@@ -9,6 +10,8 @@ import { Component, OnInit } from '@angular/core';
 export class VehicleComponent implements OnInit {
 
   vehicle: string[] = [];
+
+  @Output() selectedVehicle: string = "";
 
   constructor() { }
 
@@ -38,6 +41,7 @@ export class VehicleComponent implements OnInit {
         event.previousIndex,
         event.currentIndex,
       );
+      this.selectedVehicle = event.previousContainer.data[event.previousIndex].split(".")[0];
     }
   }
 

@@ -6,10 +6,21 @@
     cdkDropList
     #destinationdestlist="cdkDropList"
     [cdkDropListData]="destination"
+    cdkDropListSortingDisabled="true"
     cdkDropListConnectedTo="right_list">
-    <div id="drag_tip_destination" class="drag_tip">
+    
+    <div *ngFor="let d of destination"
+        draggable="true"
+        id="{{d}}"
+        cdkDrag
+        class="icon_container">
+        <img class="icon" src="/assets/{{d}}">
+    </div>
+
+    <div id="drag_tip_entity" class="drag_tip">
         <p class="drag_tip_text">
-            Drag here your destination
+            Drag here your entity
         </p>
     </div>
+
 </div>

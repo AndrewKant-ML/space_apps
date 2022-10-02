@@ -6,7 +6,16 @@
     cdkDropList
     #entitydestlist="cdkDropList"
     [cdkDropListData]="entity"
+    cdkDropListSortingDisabled="true"
     cdkDropListConnectedTo="nav_list_top">
+
+    <div *ngFor="let e of entity"
+        draggable="true"
+        id="{{e}}"
+        cdkDrag
+        class="icon_container">
+        <img class="icon" src="/assets/{{e}}">
+    </div>
 
     <div id="drag_tip_entity" class="drag_tip">
         <p class="drag_tip_text">
